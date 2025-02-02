@@ -1,0 +1,23 @@
+import React from 'react';
+
+const MovieItem = ({ movie }) => {
+    if (!movie) {
+        return <p>No movie data available</p>;
+    }
+
+    return (
+        <div className="card">
+            <img
+                src={movie.Poster || 'https://via.placeholder.com/150'}
+                className="card-img-top"
+                alt={movie.Title || 'No Title Available'}
+            />
+            <div className="card-body">
+                <h5 className="card-title">{movie.Title || 'Untitled'}</h5>
+                <p className="card-text">{movie.Year || 'Year unavailable'}</p>
+            </div>
+        </div>
+    );
+};
+
+export default MovieItem;
